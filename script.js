@@ -1,31 +1,19 @@
-// 217. Contains Duplicate
-
-// Given an integer array nums, return true if any value appears at least
-// twice in the array, and return false if every element is distinct.
-
-// Example 1:
-
-// Input: nums = [1,2,3,1]
-// Output: true
-
-// Example 2:
-
-// Input: nums = [1,2,3,4]
-// Output: false
-// Example 3:
-
-// Input: nums = [1,1,1,3,3,4,3,2,4,2]
-// Output: true
-
-var containsDuplicate = function (nums) {
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = i + 1; j < nums.length; j++) {
-      if (nums[i] === nums[j]) {
-        return true;
-      }
+let promise = new Promise((resolve, reject) => {
+  // Asynchronous operation
+  setTimeout(() => {
+    let success = false; // Simulate success or failure
+    if (success) {
+      resolve("Operation completed successfully");
+    } else {
+      reject("Operation failed");
     }
-  }
-  return false;
-};
+  }, 2000);
+});
 
-console.log(containsDuplicate([1, 2, 3, 1]));
+promise
+  .then((result) => {
+    console.log(result); // Output: Operation completed successfully
+  })
+  .catch((error) => {
+    console.log(error); // Output: Operation failed
+  });
